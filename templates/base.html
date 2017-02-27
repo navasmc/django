@@ -10,23 +10,24 @@
 </head>
 <body>
     <!-- Static navbar -->
-    <nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container navbar-inner">
+    <nav id="top-bar-nav" class="navbar navbar-default navbar-fixed-top">
+    <div class="container navbar-inner ">
       <ul class="nav nav-pills pull-right">
                   {% if user.is_authenticated %}
                   <li>Welcome, {{ user.username }}.</li>
-                  <li><a href="{% url 'user:logout'%}" class="btn btn-link" >Logout</a></li>
+                  <li><a href="{% url 'user:logout'%}" class="btn btn-link" ><i class="fa fa-sign-out" aria-hidden="true"></i>Logout</a></li>
                   {% else %}
-                      <li>Welcom quest,<a href="{% url 'user:logout'%}" class="btn btn-link" >Login</a></li>
+                      <li>Welcom quest,</li>
+                      <li><a href="{% url 'user:logout'%}" class="btn btn-link" ><i class="fa fa-sign-in" aria-hidden="true"></i>Login</a></li>
                   {% endif %}           
           </ul>
     </div>
     </nav>
     <!-- Static navbar -->
-    <nav class="navbar navbar-default navbar-static-top">
+    <nav id="middle-bar-nav"  class="navbar navbar-default navbar-static-top">
       
       <div class="container">
-      </div>
+     
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
             <span class="sr-only">Toggle navigation</span>

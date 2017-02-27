@@ -1,1 +1,6 @@
 body{background: #ccc}
+#top-bar-nav{min-height: 30px;background-color: #F9F9F9B3;}
+#top-bar-nav ul{padding: 3px;}
+#top-bar-nav ul li a{padding: 0px;}
+#middle-bar-nav{top: 30px;background-color: white;}
+#middle-bar-nav .navbar-brand{padding: 0px;}

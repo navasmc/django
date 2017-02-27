@@ -36,7 +36,7 @@ STATICFILES_DIRS = [
 PROJECT_TEMPLATES = [
     join(PROJECT_ROOT, 'mysite/templates'), 
 ]
-TEMPLATE_DIRS = (os.path.join(PROJECT_ROOT, "templates"),)
+#TEMPLATE_DIRS = (os.path.join(PROJECT_ROOT, "templates"),)
 # Add apps/ to the Python path
 sys.path.append(normpath(join(PROJECT_ROOT, 'apps')))
 
@@ -69,11 +69,13 @@ MIDDLEWARE_CLASSES = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
 ]
+PROJECT_PATH = os.path.abspath(os.path.dirname(__name__))
+
 # Template stuff
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS':  [TEMPLATE_DIRS],
+        'DIRS':  [PROJECT_ROOT, "templates"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -169,3 +171,4 @@ DATABASES = {
 
 INSTALLED_APPS = DEFAULT_APPS
 # Settings Common
+SECURE_BROWSER_XSS_FILTER=True

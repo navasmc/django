@@ -113,10 +113,10 @@ DEFAULT_TABLESPACE = ''
 ##..
 #Language
 # full Python path to a Python package that contains format definitions for project locales.If not None, Django will check for a formats.py file, under the directory named as the current locale, and will use the formats defined in this file
-FORMAT_MODULE_PATH = [
-    'mysite.formats',
-    'some_app.formats',
-]
+# FORMAT_MODULE_PATH = [
+#     'mysite.formats',
+#     'some_app.formats',
+# ]
 
 INSTALLED_APPS = [    
 	'django.contrib.admin',
@@ -146,3 +146,16 @@ MANAGERS = ['navasmc1@gmail.com']
 # "/var/www/example.com/media/"
 MEDIA_ROOT = '/var/www/example.com/media/'
 MEDIA_URL = '/media/'
+#Middleware is a framework of hooks into Django’s request/response processing. It’s a light, low-level “plugin” system for globally altering Django’s input or outpu
+MIDDLEWARE = [
+    'django.middleware.security.SecurityMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.common.CommonMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+]
+
+# The root URL configuration
+ROOT_URLCONF = '%s.urls' % SITE_NAME
